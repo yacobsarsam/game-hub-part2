@@ -17,7 +17,7 @@ const GameGrid = () => {
     const [error, setError] = useState('');
 
     useEffect(()=>{
-        apiClient.get<FetchGamesResponse>("/xgames").
+        apiClient.get<FetchGamesResponse>("/games").
         then(res=>setGames(res.data.results)).
         catch(err=>setError(err.message));
     })
