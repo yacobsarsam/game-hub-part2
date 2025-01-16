@@ -1,5 +1,6 @@
 import {Grid, GridItem, useBreakpointValue,} from "@chakra-ui/react";
 import NavBar from "@/components/NavBar.tsx";
+import GameGrid from "@/components/GameGrid.tsx";
 
 function App() {
     const isLargeScreen = useBreakpointValue({base: false, lg: true});
@@ -13,7 +14,9 @@ function App() {
                 <NavBar/>
             </GridItem>
             {isLargeScreen && <GridItem area="aside">Aside</GridItem>}
-            <GridItem area="main">Main</GridItem>
+            <GridItem area="main">
+                <GameGrid/>
+            </GridItem>
         </Grid>
     );
 }
