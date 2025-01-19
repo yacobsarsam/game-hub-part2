@@ -5,12 +5,13 @@ import GenreList from "@/components/GenreList.tsx";
 import {useState} from "react";
 import {Genre} from "@/hooks/useGenres.ts";
 import PlatformSelector from "@/components/PlatformSelector.tsx";
+import {Platform} from "@/hooks/usePlatforms.ts";
 
 
 function App() {
     const isLargeScreen = useBreakpointValue({base: false, lg: true});
     const [selectedGenre, setSelectedGenre] = useState<Genre|null>(null);
-
+    const [selectedPlatform, setSelectedPlatform] = useState<Platform|null>(null);
 
     return (
         <Grid templateAreas={{
@@ -22,16 +23,16 @@ function App() {
                   lg: '200px 1fr'
               }}>
             <GridItem area="nav">
-                <NavBar/>
-            </GridItem >
-            {isLargeScreen && <GridItem area="aside" paddingX={5}>
-            <GenreList selectedGenre={selectedGenre} onSelectGenre={(genre)=> setSelectedGenre(genre)} />
-            </GridItem>}
+                <NavBar />
+            </ GridItem >
+            {isLargeScreen && <GridItem area="aside" paddingX={5} >
+            <GenreList selectedGenre={selectedGenre} onSelectGenre={(genre)=> setSelectedGenre(genre)}/>
+            </ GridItem>}
             <GridItem area="main">
-                <PlatformSelector/>
-                <GameGrid selectedGenre={selectedGenre}/>
-            </GridItem>
-        </Grid>
+                <PlatformSelector onSelectPlatform={(platform) => setSelectedPlatform(platform)}  selectedPlatform={selectedPlatform}/>
+                <GameGrid selectedGenre={selectedGenre} selectedPlatform={selectedPlatform} />
+            </ GridItem>
+        </ Grid>
     );
 }
 export default App
