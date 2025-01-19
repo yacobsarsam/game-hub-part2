@@ -4,11 +4,10 @@ const GameCardSkeleton = () => {
 
     return (
     <Card>
-        <Skeleton height='290px'>
+        <Skeleton height='250px' />
             <CardBody>
                 <SkeletonText/>
             </CardBody>
-        </Skeleton>
     </Card>
     )
 }
