@@ -4,12 +4,12 @@ const GameCardSkeleton = () => {
 
     return (
     <Card>
-        <Skeleton height='320px'>
+        <Skeleton height='290px'>
             <CardBody>
                 <SkeletonText/>
             </CardBody>
         </Skeleton>
     </Card>
-    );
+    )
 }
 export default GameCardSkeleton;
