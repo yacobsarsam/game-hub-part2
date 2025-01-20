@@ -17,13 +17,13 @@ export const SortSelector = ({onSelectSortOrder, sortOrder}:Props) => {
         { value:'-rating', lable:'Average rating'},
     ];
 
-    const currentSortorder = setorders.find(order=> order.value === sortOrder);
+    const currentSortOrder = setorders.find(order=> order.value === sortOrder);
 
     return (
         <Menu>
 
             <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-                Order by: {currentSortorder?.lable || "Relevance"}
+                Order by: {currentSortOrder?.lable || "Relevance"}
             </MenuButton>
             <MenuList>
                 {setorders.map(
