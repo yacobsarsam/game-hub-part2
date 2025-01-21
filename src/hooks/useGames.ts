@@ -1,5 +1,4 @@
 import useData from "@/hooks/useData.ts";
-import {Genre} from "@/hooks/useGenres.ts";
 import {Platform} from "@/hooks/usePlatforms.ts";
 import {GameQuery} from "@/App.tsx";
 
@@ -25,5 +24,6 @@ export const useGames = (
             genres:gameQuery.genre?.id,
             platforms:gameQuery.platform?.id,
             ordering:gameQuery.sortOrder,
+            search:gameQuery.searchText,
         }},
         [gameQuery]);
