@@ -3,6 +3,7 @@ import {Game} from "@/hooks/useGames.ts";
 import PlatformIconList from "@/components/PlatformIconList.tsx";
 import CriticScore from "@/components/CriticScore.tsx";
 import getCroppedImageUrl from "@/services/image-url.ts";
+import Emoji from "@/components/Emoji.tsx";
 
 interface Props {
     game:Game
@@ -16,7 +17,7 @@ export const GameCard = ({game}:Props) => {
                 <PlatformIconList platforms={game.parent_platforms.map(p=>p.platform)}/>
                 <CriticScore score={game.metacritic}></CriticScore>
                 </HStack>
-                <Heading fontSize={"2xl"}>{game.name}</Heading>
+                <Heading fontSize={"2xl"}>{game.name} <Emoji rating={game.rating_top}/></Heading>
             </CardBody>
         </Card>
     )
