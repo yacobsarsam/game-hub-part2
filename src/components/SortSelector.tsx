@@ -21,7 +21,6 @@ export const SortSelector = ({onSelectSortOrder, sortOrder}:Props) => {
 
     return (
         <Menu>
-
             <MenuButton as={Button} rightIcon={<BsChevronDown />}>
                 Order by: {currentSortOrder?.lable || "Relevance"}
             </MenuButton>
