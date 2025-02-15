@@ -3,31 +3,31 @@ import {BsChevronDown} from "react-icons/bs";
 
 interface Props {
     onSelectSortOrder: (sortOrder: string) => void;
-    sortOrder:string;
+    sortOrder: string;
 }
 
-export const SortSelector = ({onSelectSortOrder, sortOrder}:Props) => {
+export const SortSelector = ({onSelectSortOrder, sortOrder}: Props) => {
 
-    const setorders = [
-        { value:'', lable:'Relevance'},
-        { value:'-added', lable:'Date added'},
-        { value:'-name', lable:'Name'},
-        { value:'-released', lable:'Release date'},
-        { value:'-metacritic', lable:'Popularity'},
-        { value:'-rating', lable:'Average rating'},
+    const setOrders = [
+        { value: '', lable: 'Relevance' },
+        { value: '-added', lable: 'Date added' },
+        { value: '-name', lable: 'Name' },
+        { value: '-released', lable: 'Release date' },
+        { value: '-metacritic', lable: 'Popularity' },
+        { value: '-rating', lable: 'Average rating' },
     ];
 
-    const currentSortOrder = setorders.find(order=> order.value === sortOrder);
+    const currentSortOrder = setOrders.find(order => order.value === sortOrder);
 
     return (
         <Menu>
-            <MenuButton as={Button} rightIcon={<BsChevronDown />}>
+            <MenuButton as={Button} rightIcon={<BsChevronDown /> as React.ReactElement}>
                 Order by: {currentSortOrder?.lable || "Relevance"}
             </MenuButton>
             <MenuList>
-                {setorders.map(
+                {setOrders.map(
                     order =>
-                        <MenuItem onClick={()=>onSelectSortOrder(order.value)} key={order.value} value={order.value}>
+                        <MenuItem onClick={() => onSelectSortOrder(order.value)} key={order.value} value={order.value}>
                             {order.lable}
                         </MenuItem>)}
             </MenuList>
