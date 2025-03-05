@@ -9,7 +9,7 @@ const ErrorPage = () => {
         <>
             <NavBar/>
             <Box padding={5}>
-            <Heading>Oops...</Heading>
+            <Heading> Oops... </Heading>
             <Text>
                 {isRouteErrorResponse(error) ? 'This page dose not exist' : 'An unexpected error occurred'}
             </Text>

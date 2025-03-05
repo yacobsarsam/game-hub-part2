@@ -10,7 +10,7 @@ const GameGrid = () => {
 
     const skeletons = [1,2,3,4,5,6,7,8,9,10];
     const {data, error,isLoading,fetchNextPage,hasNextPage}= useGames();
-    if (error) return <Text> {error.message} </Text>;
+    if (error) return ( <Text> {error.message} </Text> );
 
     const fetchedGameCount = data?.pages.reduce((acc,page)=>acc+page.results.length,0) || 0;
 
@@ -23,11 +23,11 @@ const GameGrid = () => {
                     </GameCardContainer>))}
                 {data?.pages.map((page,index)=>
                     <React.Fragment key={index}>
-                        {page.results.map((game)=>(
-                            <GameCardContainer key={game.id}>
-                                <Game_Card  game={game}></Game_Card>
-                            </GameCardContainer>
-                        ))}
+                        {page.results.map((game)=>
+                            (<GameCardContainer key={game.id}>
+                                <Game_Card  game={game} ></Game_Card>
+                            </GameCardContainer>)
+                        )}
                     </React.Fragment>)}
                 </SimpleGrid>
             </InfiniteScroll>
