@@ -1,5 +1,6 @@
 import {useQuery} from "@tanstack/react-query";
 import ApiClient from "@/services/api-client.ts";
+import {ScreenShot} from "@/entities/ScreenShot.ts";
 
 interface Props {
     gameId: number;

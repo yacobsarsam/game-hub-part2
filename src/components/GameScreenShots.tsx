@@ -4,7 +4,7 @@ import {SimpleGrid, Image} from "@chakra-ui/react";
 interface Props {
     gameId: number;
 }
-const GameScreenShots = ({gameId}:Props) => {
+const GameScreenShots = ( {gameId} : Props ) => {
     const {data, error, isLoading} = useScreenShots(gameId);
     if(isLoading) return <div>Loading...</div>;
     if (error) throw error;
