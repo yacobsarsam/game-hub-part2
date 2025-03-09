@@ -1,8 +1,8 @@
-import {Platform} from "@/entities/Platform.ts";
-import {Genre} from "@/entities/Genre.ts";
-import {Publisher} from "@/entities/Publisher.ts";
+import Platform from "@/entities/Platform.ts";
+import Genre from "@/entities/Genre.ts";
+import Publisher from "@/entities/Publisher.ts";
 
-export interface Game {
+export default interface Game {
     id: number;
     name: string;
     slug: string;
